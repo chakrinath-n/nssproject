@@ -2,7 +2,7 @@ import axios from "axios";
 import type { InternalAxiosRequestConfig } from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_API_URL, // ✅ from .env
 });
 
 api.interceptors.request.use(
@@ -15,7 +15,9 @@ api.interceptors.request.use(
     if (url.startsWith("/officer")) {
       token = localStorage.getItem("officer_token");
     } else {
-      token = localStorage.getItem("token") || localStorage.getItem("officer_token");
+      token =
+        localStorage.getItem("token") ||
+        localStorage.getItem("officer_token");
     }
 
     if (token) {
