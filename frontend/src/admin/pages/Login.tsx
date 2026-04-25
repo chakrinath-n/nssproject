@@ -29,7 +29,7 @@ export default function Login() {
 
     try {
       const response = await axios.post(
-        `${VITE_BASE_URL}/api/auth/login`,
+        `${VITE_BASE_URL}/auth/login`,
         {
           email: formData.email,
           password: formData.password,
