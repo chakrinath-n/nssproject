@@ -21,6 +21,7 @@ export default function Login() {
     password: "",
     rememberMe: false,
   });
+  const VITE_BASE_URL = import.meta.env.VITE_API_URL
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +29,7 @@ export default function Login() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${VITE_BASE_URL}/api/auth/login`,
         {
           email: formData.email,
           password: formData.password,
