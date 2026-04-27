@@ -2,16 +2,16 @@ import axios from "axios";
 import type { InternalAxiosRequestConfig } from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // ✅ from .env
+  baseURL: `${import.meta.env.VITE_API_URL}/api`, // ✅ FIXED
 });
 
 api.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     const url = config.url || "";
 
-    // ✅ Send correct token based on route
     let token: string | null = null;
 
+    // ✅ officer routes
     if (url.startsWith("/officer")) {
       token = localStorage.getItem("officer_token");
     } else {

@@ -5,7 +5,7 @@ export interface ImageType {
   url: string;
   caption: string | null;
   section: string;
-  category?: string | null; // ✅ NEW (only used for gallery)
+  category?: string | null;
   uploaded_at: string;
 }
 
@@ -22,7 +22,7 @@ export const getImageById = (id: number) =>
   api.get<ImageType>(`/images/${id}`);
 
 /* =========================
-   CREATE IMAGE (UPLOAD)
+   CREATE IMAGE
 ========================= */
 export const createImage = (formData: FormData) =>
   api.post<ImageType>("/images", formData, {
@@ -39,7 +39,7 @@ export const updateImage = (
   data: {
     caption?: string;
     section?: string;
-    category?: string | null; // ✅ FIXED — allow category
+    category?: string | null;
   }
 ) => api.put<ImageType>(`/images/${id}`, data);
 
