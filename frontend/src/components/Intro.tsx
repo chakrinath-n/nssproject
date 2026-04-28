@@ -269,7 +269,7 @@ export default function Intro() {
                   {/* ✅ Bigger image and name */}
                   <div className="flex flex-col items-center text-center py-4">
                     <img
-                      src={`http://localhost:5000${member.image_url}`}
+                      src={`${import.meta.env.VITE_API_URL}/uploads/${member.image_url}`}
                       className="w-32 h-32 rounded-full object-cover border-4 border-red-600 shadow-lg"
                     />
                     <h4 className="mt-4 text-base font-bold text-white">

@@ -162,7 +162,7 @@ export default function NssAwardsPage() {
                             <td className="px-6 py-4 w-20">
                               {award.photo ? (
                                 <img
-                                  src={`http://localhost:5000/uploads/${award.photo}`}
+                                  src={`${import.meta.env.VITE_API_URL}/uploads/${award.photo}`}
                                   className="w-14 h-14 object-cover rounded shadow"
                                 />
                               ) : (
