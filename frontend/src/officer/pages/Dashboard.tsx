@@ -103,7 +103,7 @@ export default function Dashboard() {
         <div className="flex items-center gap-5 mb-6">
           {o.profile_image ? (
             <img
-              src={`http://localhost:5000/uploads/${o.profile_image}`}
+              src={`${import.meta.env.VITE_API_URL}/uploads/${o.profile_image}`}
               className="w-20 h-20 rounded-full object-cover border-4 border-green-200 shadow"
             />
           ) : (
