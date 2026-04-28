@@ -192,7 +192,7 @@ export default function Awards() {
                         <td className="px-4 py-3">
                           {a.photo ? (
                             <img
-                              src={`http://localhost:5000/uploads/${a.photo}`}
+                              src={`${import.meta.env.VITE_API_URL}/uploads/${a.photo}`}
                               className="w-10 h-10 rounded-full object-cover"
                             />
                           ) : "—"}
