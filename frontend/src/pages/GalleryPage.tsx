@@ -154,7 +154,7 @@ export default function GalleryPage() {
 
           <div onClick={(e) => e.stopPropagation()}>
             <img
-              src={`${BASE_URL}${selectedImage.url}`}
+              src={`${BASE_URL}/${selectedImage.url}`}
               className="max-h-[80vh] rounded"
             />
 
