@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Image as ImageIcon, X, Loader2, ZoomIn } from "lucide-react";
 import { getImages, type Image } from "@/api/public";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export default function GalleryPage() {
   const [images, setImages] = useState<Image[]>([]);
